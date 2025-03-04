@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link
+      rel="shortcut icon"
+      href="https://icon-library.com/images/cinema-icon-png/cinema-icon-png-7.jpg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <header>
+        <a href="/index.html"><img src="/assets/logo.png" alt="logo LiveStream"></a>
+        <div class="Auth_Section">
+          <a class="Sign_In" href="./indexLogin.html">Sign In</a>
+        </div>
+    </header>
+    <main>
+            <h1>Cadastre-se aqui!</h1>
+            <p>Assista filmes gratuitos e ilimitados em nossa plataforma totalmente online!</p>
+            <form>
+                <div>
+                    <input required type="text" name="nome" id="nome" class="input">
+                    <label for="nome">Nome</label>
+                </div>
+                <div>
+                    <input required placeholder="example.name@example.com" type="email" name="login" id="login" class="input inputTelefone">
+                    <label for="emails">E-mail</label>
+                </div>
+                <div>
+                    <select id="genero" name="genero" required>
+                        <option value="" disabled selected></option>
+                        <option value="acao">Ação</option>
+                        <option value="comedia">Comédia</option>
+                        <option value="drama">Drama</option>
+                        <option value="suspense">Suspense</option>
+                        <option value="ficcao">Ficção Científica</option>
+                        <option value="romance">Romance</option>
+                        <option value="terror">Terror</option>
+                    </select>
+                    <label for="genero">Gênero Favorito</label>
+                </div>
+                <div class="singleInputSenha">
+                    <input required type="password" name="senha" id="senha" class="input">
+                    <label for="senha">Senha</label>                 
+                </div>
+                <div class="singleInputSenha">
+                    <input required type="password" name="senha" id="confirmeSenha" class="input">
+                    <label for="senha">Confirme sua senha</label>    
+                </div>
+                <div>
+                    <p>Ao continuar, você aceita os<a href="#" target="_blank"> Termos e Condições e Aviso de Privacidade.</a></p>
+                </div>
+                <div class="enviarCadastro">
+                    <button type="submit" id="cadastrar" class="submitButton">Cadastrar!</button>
+                </div>
+                
+                
+            </form>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+</html>
