@@ -1,8 +1,19 @@
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem vertical */
+  height: 8px; /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #777; /* Cor da parte arrastável ou #333 */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
 /* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* Estilo geral do corpo */
@@ -12,9 +23,66 @@ body {
   color: #fff; /* Texto branco */
   line-height: 1.6;
 }
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8f8FF;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-height: 80px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+header img{
+  width: 150px;
+  height: 80px;
+  background-color: #F8f8FF;
+  margin-left: 30px;
+}
+
+.Auth_Section{
+  margin-right: 30px;
+}
+
+.Auth_Section a{
+  text-transform: capitalize;
+  font-weight: 600;
+  text-decoration: none;
+  color: #141414;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.Sign_Up{
+  border: 1px solid #e50914;
+  background-color: #e50914;
+  opacity: 0.8;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.Sign_Up:hover{
+  opacity: 1;
+  background-color: #e50914
+}
+
+.Sign_In{
+  opacity: 0.6;
+}
+
+.Sign_In:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: #e50914;
+}
+
 
 /* Menu lateral */
 .menu-lateral {
+  margin-top: 100px;
   background-color: #141414;
   color: #fff;
   width: 250px;
@@ -56,6 +124,7 @@ body {
 
 /* Estilo do conteúdo principal */
 main {
+  margin-top: 100px;
   margin-left: 270px; /* Deixa espaço para o menu lateral */
   padding: 20px;
 }
@@ -72,17 +141,18 @@ p {
 }
 
 /* Estilo para a seção de filmes */
-.container_categorias {
+.containers_categories {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
   gap: 20px;
-  border: 1px solid #e50914;
 }
 
-.container_comedia,
-.container_ficcao,
-.container_romance {
-  background-color: #333;
+.container{
+  /* background-color: #333; possivel cor de fundo das seções*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 500px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
@@ -91,19 +161,24 @@ p {
   font-size: 1.5em;
 }
 
-.container_comedia:hover,
-.container_ficcao:hover,
-.container_romance:hover {
-  background-color: #555; /* Cor mais clara ao passar o mouse */
+.container:hover{
+ /* background-color: #555;  Cor mais clara ao passar o mouse */
   cursor: pointer;
 }
 
-.cards_filmes_comedia{
+.container_title{
+  text-transform: uppercase;
+  font-weight: 800;
+  font-style: italic;
+  font-size: larger;
+}
+
+.cards_filmes{
   display: flex;
   gap: 20px;
-  justify-content: center;
   padding: 15px;
   flex-direction: row;
+  overflow-x: scroll;
 }
 
 
@@ -111,7 +186,9 @@ p {
 .card_filme {
   display: flex;
   flex-direction: column;
+  min-width: 250px;
   width: 250px;
+  min-height: 320px;
   height: auto;
   background-color: #333;
   border-radius: 8px;
@@ -119,7 +196,11 @@ p {
   color: #fff;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  opacity: 0.6;
+}
+
+.card_filme:hover{
+  opacity: 1.0;
 }
 
 /* Container da imagem */
@@ -127,29 +208,25 @@ p {
   position: relative;
   width: 100%;
   height: 200px; /* Defina a altura da imagem */
+  cursor: default;
 }
 
 /* Estilo para a imagem do filme */
 .imagem-filme {
-  height: 100%;
   width: 100%;
   object-fit: fill; /* Cobre o container sem distorcer a imagem */
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 /* Botão de Play */
 .play-button {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centraliza o ícone */
   width: 50px; /* Tamanho do ícone de play */
   cursor: pointer;
   transition: opacity 0.3s ease; /* Efeito de transição para o hover */
-  opacity: 0.8; /* Deixa o ícone de play um pouco transparente */
+  opacity: 0.6; /* Deixa o ícone de play um pouco transparente */
 }
 
 /* Efeito de hover no botão de Play */
@@ -159,6 +236,7 @@ p {
 
 /* Descrição do filme */
 .card_filme p {
+  z-index: 1;
   height: 80px;
   margin-top: 5px;
   text-align: justify;
@@ -168,6 +246,126 @@ p {
   color: #ddd; /* Texto da descrição em uma cor mais suave */
 }
 
+
+/* AREA DO CARD DO FILME */
+.container_filme{
+  display: flex;
+  width: 800px;
+  height: 480px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  background-color: #222;
+}
+
+.icon_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: #333;
+  opacity: 0.7;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 9px;
+  padding-right: 9px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon_home:hover{
+  background-color: #e50914;
+  opacity: 1.0;
+}
+
+.icon_home img{
+  height: 100%;
+  width: 100%;
+}
+
+.imagem_filme_details{
+  width: 400px;
+  height: 100%;
+  min-width: 400px;
+  border-radius: 30px;
+  object-fit: fill;
+}
+
+.detalhes_filme{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.title_filme{
+  font-weight: 900;
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+.title_sinopse{
+  font-weight: 600;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.description_sinopse{
+  height: auto;
+  font-size: small;
+  max-height: 30px;
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+
+.description_sinopse::first-letter{
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+
+.title_elenco{
+  font-weight: 600;
+  margin-top: 30px;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.description_elenco{
+  height: auto;
+  font-size: small;
+  max-height: 30px;
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+
+
+.button_watch{
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #e50914;
+  text-decoration: none;
+  margin-top: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.button_watch:hover{
+  opacity: 1.0;
+}
 
 /* Footer */
 footer {
