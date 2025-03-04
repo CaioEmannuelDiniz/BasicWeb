@@ -62,7 +62,7 @@ header img {
     align-items: center;
     justify-content: flex-end; 
     height: 40px;
-    width: 10%; 
+    width: 15%; 
 }
 .Sign_In{
     font-weight: 500;
@@ -83,23 +83,22 @@ header img {
     background-color: var(--buttonHover);
     
 }
-  
 
 main {
     display: flex;
     grid-column: 2 / 3;
     flex-direction: column;
-    margin: 50px;
+    margin-top: 50px;
     background: #000000B3;
     border-radius: 10px;
-    overflow: hidden;
+    height: auto;
     & h1 {
         font-size: 2em;
         margin: 20px 0 50px;
     }
     & p{
         font-size: 1.125em;
-        margin-bottom: 50px;
+        margin: 0 50px 50px 50px;
     }
     color: var(--colorFont);
 }
@@ -113,7 +112,7 @@ form {
 
 .input {
     
-    width: 80%;
+    width: 85%;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -185,7 +184,7 @@ div label {
 }
 
 select {
-    width: 85%;
+    width: 90%;
     text-align: center;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -264,6 +263,13 @@ div p {
     cursor: pointer;
 
 }   
+
+footer {
+    grid-column: 1 / 4;
+    width: 100%;
+    height: 80px;
+
+}
 
 
 
