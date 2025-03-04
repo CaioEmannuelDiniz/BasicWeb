@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link
+      rel="shortcut icon"
+      href="https://icon-library.com/images/cinema-icon-png/cinema-icon-png-7.jpg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        main {
+            margin-top: 0;
+            margin-top: 20%;
+            height: 50vh;
+            overflow: hidden;
+        }
+        .enviarCadastro{
+            margin-top: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <a href="/index.html"><img src="/assets/logo.png" alt="logo LiveStream"></a>
+            <div class="Auth_Section">
+              <a class="Sign_In" href="./indexLogin.html">Sign Up</a>
+            </div>
+        </header>
+        <main>
+                <h1>Entre na sua conta!</h1>
+                <p>E comece a assistir filmes agora mesmo!</p>
+                <form>
+                    <div>
+                        <input required placeholder="example.name@example.com" type="email" name="login" id="login" class="input inputTelefone">
+                        <label for="emails">E-mail</label>
+                    </div>
+                    <div class="singleInputSenha">
+                        <input required type="password" name="senha" id="senha" class="input">
+                        <label for="senha">Senha</label>                 
+                    </div>
+                    <div class="enviarCadastro">
+                        <button type="submit" id="cadastrar" class="submitButton">Entrar</button>
+                    </div>                  
+                </form>
+        </main>
+</body>
+</html>
