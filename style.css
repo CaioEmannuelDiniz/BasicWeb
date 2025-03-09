@@ -92,6 +92,7 @@ header img{
   left: 0;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .menu-lateral h2 {
@@ -370,11 +371,15 @@ p {
 /* Footer */
 footer {
   background-color: #141414;
-  padding: 20px;
+  height: 50px;
+  max-height: 50px;
+  padding-top: 10px;
   text-align: center;
   color: #777;
   position: fixed;
   bottom: 0;
   width: 100%;
   font-size: 0.9em;
+  text-align: center;
+  margin-left: 150px;
 }
