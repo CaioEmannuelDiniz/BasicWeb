@@ -117,6 +117,7 @@ header img{
   font-size: 1.2em;
   display: block;
   transition: color 0.3s ease;
+  user-select: none;
 }
 
 .menu-lateral nav ul li a:hover {

@@ -4,3 +4,11 @@
     margin-left: 0;
     margin-bottom: 100px;
 }
+
+.trailer{
+    opacity: 0.8;
+}
+
+.trailer:hover{
+    opacity: 1;
+}

@@ -1,0 +1,13 @@
+.container{
+    margin-bottom: 80px;
+}
+.cards_filmes{
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#active{
+    color: #e50914;
+}
